@@ -9,4 +9,9 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
+    public void createBook(CreateBookRequest request){
+        Book book = BookMapper.mapToBookFromRequest(request);
+        bookRepository.save(book);
+    }
+
 }
